@@ -1,4 +1,11 @@
-@[toc]
+<!-- TOC -->
+  * [概要](#概要)
+  * [思维导图](#思维导图)
+  * [步骤一：在main()中调用run()的时候，其内部会先创建一个`SpringApplication`实例](#步骤一在main中调用run的时候其内部会先创建一个springapplication实例)
+  * [步骤二：调用run()方法，走完流程后返回一个运行中的`ApplicationContext`：](#步骤二调用run方法走完流程后返回一个运行中的applicationcontext)
+<!-- TOC -->
+
+
 ## 概要
 `springboot版本：2.7.11（不同版本间仅存在细微差距，大的流程是相似的）`
 `仅深入部分源码解析，refresh()方法源码有官方注释，不再此处单独列出解析`
@@ -14,7 +21,7 @@
 
 ## 思维导图
 `下图是两个步骤的图示步骤拆解，更详细步骤的看代码块中的注释`
-![SpringBoot启动流程思维导图](../resources/pictures/sb_1.png)
+![SpringBoot启动流程思维导图](../../resources/pictures/springboot/sb_1.png)
 
 
 ## 步骤一：在main()中调用run()的时候，其内部会先创建一个`SpringApplication`实例
