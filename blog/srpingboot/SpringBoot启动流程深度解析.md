@@ -75,6 +75,10 @@
  - 刷新：刷新主程序上下文，完成bean加载、自动装配、web服务器启动、AOP代理等
  - 完成：执行 Runner，发布就绪事件
 
+`关键单例bean：springApplicationArguments（封装和管理应用程序启动参数的核心接口）和springBootBanner（用于展示横幅、文字的）`
+
+---
+
 `代码块2-1：`
 ```java
 	public ConfigurableApplicationContext run(String... args) {
@@ -144,6 +148,9 @@
 ```
 
 `代码块2-2：`
+
+准备环境：
+
 ```java
 	private ConfigurableEnvironment prepareEnvironment(SpringApplicationRunListeners listeners,
 			DefaultBootstrapContext bootstrapContext, ApplicationArguments applicationArguments) {
@@ -174,6 +181,8 @@
 	}
 ```
 `代码块2-3：`
+
+准备上下文：配置环境、应用主程序上下文初始化器、发布上下文准备事件、注册核心bean、配置bean工厂、配置懒加载、属性源排序、加载主配置源、将BeanDefinition注册到bean工厂、发布上下文加载完毕事件
 
 ```java
 	private void prepareContext(DefaultBootstrapContext bootstrapContext, ConfigurableApplicationContext context,
